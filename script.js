@@ -37,16 +37,15 @@ function doCalc()
    for(var i=0;i<operationsArray.length;i++)
    {
        if(operationsArray[i] === '+')
-           result =  result + itemsArray[i+1] 
+           result = ((result*10) + (itemsArray[i+1]*10))/10 
        if(operationsArray[i] === '*')
             result = result*itemsArray[i+1]
        if(operationsArray[i] === '/')
             result = result/itemsArray[i+1]
        if(operationsArray[i] === '-')
-           result = result - itemsArray[i+1]
+           result = ((result*10) - (itemsArray[i+1]*10))/10 
    } 
-    if(result.toString().length > 16)
-   result = result.toFixed(1)
+    
    if(result === Infinity)
    {
     document.getElementById('in-number').value = 'INFINITY'
