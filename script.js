@@ -45,6 +45,8 @@ function doCalc()
        if(operationsArray[i] === '-')
            result = result - itemsArray[i+1]
    } 
+    if(result.toString().length > 16)
+   result = result.toFixed(1)
    if(result === Infinity)
    {
     document.getElementById('in-number').value = 'INFINITY'
